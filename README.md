@@ -21,6 +21,8 @@ cd ../client
 npm install
 gulp vendor.copy
 gulp app.build
+cd ..
+php -S 0.0.0.0:8888 -t public public/index.php
 ```
 
-After these, run the public/index.php in a browser.
+After these, run http://0.0.0.0:8888/ in a browser.
