@@ -1,0 +1,4 @@
+/client/node_modules/
+/server/vendor/
+/server/logs/*
+!/server/logs/README.md

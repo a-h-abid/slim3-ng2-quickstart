@@ -1,0 +1,106 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "reflect-metadata@^0.1.3",
+        "scope": null,
+        "escapedName": "reflect-metadata",
+        "name": "reflect-metadata",
+        "rawSpec": "^0.1.3",
+        "spec": ">=0.1.3 <0.2.0",
+        "type": "range"
+      },
+      "/home/ubuntu/workspace"
+    ]
+  ],
+  "_from": "reflect-metadata@>=0.1.3 <0.2.0",
+  "_id": "reflect-metadata@0.1.4",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/reflect-metadata",
+  "_nodeVersion": "6.0.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/reflect-metadata-0.1.4.tgz_1470420394864_0.22739790030755103"
+  },
+  "_npmUser": {
+    "name": "rbuckton",
+    "email": "rbuckton@chronicles.org"
+  },
+  "_npmVersion": "3.8.6",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "reflect-metadata@^0.1.3",
+    "scope": null,
+    "escapedName": "reflect-metadata",
+    "name": "reflect-metadata",
+    "rawSpec": "^0.1.3",
+    "spec": ">=0.1.3 <0.2.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/reflect-metadata/-/reflect-metadata-0.1.4.tgz",
+  "_shasum": "9341c2d7d3b0087893635d9ad8c050eab4712e4a",
+  "_shrinkwrap": null,
+  "_spec": "reflect-metadata@^0.1.3",
+  "_where": "/home/ubuntu/workspace",
+  "author": {
+    "name": "Ron Buckton",
+    "email": "ron.buckton@microsoft.com",
+    "url": "http://github.com/rbuckton"
+  },
+  "bugs": {
+    "url": "https://github.com/rbuckton/ReflectDecorators/issues"
+  },
+  "dependencies": {},
+  "description": "Polyfill for Metadata Reflection API",
+  "devDependencies": {
+    "typescript": "^1.7.5"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "9341c2d7d3b0087893635d9ad8c050eab4712e4a",
+    "tarball": "https://registry.npmjs.org/reflect-metadata/-/reflect-metadata-0.1.4.tgz"
+  },
+  "gitHead": "0d7afafad2120c90de0a7ea7d8c273544254dd89",
+  "homepage": "http://rbuckton.github.io/ReflectDecorators",
+  "keywords": [
+    "decorator",
+    "metadata",
+    "javascript",
+    "reflect"
+  ],
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "license": "Apache-2.0",
+      "url": "http://github.com/rbuckton/ReflectDecorators/raw/master/LICENSE"
+    }
+  ],
+  "main": "Reflect.js",
+  "maintainers": [
+    {
+      "name": "rbuckton",
+      "email": "rbuckton@chronicles.org"
+    }
+  ],
+  "name": "reflect-metadata",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbuckton/ReflectDecorators.git"
+  },
+  "scripts": {
+    "build": "tsc.cmd",
+    "build-test": "tsc.cmd --project ./test/",
+    "test": "npm run-script build-test & node ./temp/test/run.js"
+  },
+  "typescript": {
+    "definition": "reflect-metadata.d.ts"
+  },
+  "typings": "typings.d.ts",
+  "version": "0.1.4"
+}

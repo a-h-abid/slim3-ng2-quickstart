@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "system",
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noLib": false,
+    "declaration": false,
+    "outDir": "../public/ng2/app",
+    "outFile": "../public/ng2/app/main.js"
+  },
+  "exclude": [
+    "gulpfile.ts",
+    "node_modules",
+    "typings",
+    "typings/index.d.ts",
+    "typings/globals/core-js",
+    "typings/globals/core-js/index.d.ts",
+    "typings/globals/node",
+    "typings/globals/node/index.d.ts"
+  ]
+}
