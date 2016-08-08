@@ -1,4 +1,5 @@
 /client/node_modules/
 /server/vendor/
 /server/logs/*
+/public/ng2/vendor/
 !/server/logs/README.md
