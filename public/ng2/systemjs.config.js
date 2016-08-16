@@ -30,7 +30,6 @@
     'http',
     'platform-browser',
     'platform-browser-dynamic',
-    'router'
   ];
 
   // Add map entries for each angular package

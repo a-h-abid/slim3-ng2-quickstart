@@ -11,6 +11,7 @@ if (PHP_SAPI == 'cli-server') {
 
 define('BASE_SERVER_PATH', realpath(__DIR__.'/../server'));
 define('BASE_CLIENT_PATH', realpath(__DIR__.'/../client'));
+define('BASE_URI_PATH', rtrim(str_replace('index.php', '', $_SERVER['SCRIPT_NAME']),'/'));
 
 require BASE_SERVER_PATH . '/vendor/autoload.php';
 
