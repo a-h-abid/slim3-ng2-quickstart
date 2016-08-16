@@ -8,25 +8,18 @@
   var map = {
     'app' : 'ng2/app',
 
-    '@angular'                   : 'ng2/vendor/@angular',
-    'angular2-in-memory-web-api' : 'ng2/vendor/angular2-in-memory-web-api',
-    'rxjs'                       : 'ng2/vendor/rxjs',
-
-    'ng2-i18next'                 : 'ng2/vendor/ng2-i18next',
-    'i18next'                     : 'ng2/vendor/i18next/i18next.js',
-    'i18nextXHRBackend'           : 'ng2/vendor/i18next-xhr-backend/i18nextXHRBackend.min.js',
-    'i18nextSprintfPostProcessor' : 'ng2/vendor/i18next-sprintf-postprocessor/i18nextSprintfPostProcessor.min.js'
+    '@angular':                   'https://npmcdn.com/@angular', // sufficient if we didn't pin the version
+    '@angular/router':            'https://npmcdn.com/@angular/router@3.0.0-rc.1',
+    '@angular/forms':             'https://npmcdn.com/@angular/forms@0.3.0',
+    'rxjs':                       'https://npmcdn.com/rxjs@5.0.0-beta.6',
+    'ts':                         'https://npmcdn.com/plugin-typescript@4.0.10/lib/plugin.js',
+    'typescript':                 'https://npmcdn.com/typescript@1.9.0-dev.20160409/lib/typescript.js'
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'app'                         : { main: 'main.js',  defaultExtension: 'js' },
-    'rxjs'                        : { defaultExtension: 'js' },
-    'angular2-in-memory-web-api'  : { main: 'index.js', defaultExtension: 'js' },
-    'ng2-i18next'                 : { format: 'cjs', defaultExtension: 'js' },
-    'i18next'                     : { format: 'global' },
-    'i18nextXHRBackend'           : { format: 'global' },
-    'i18nextSprintfPostProcessor' : { format: 'global' }
+    'rxjs'                        : { defaultExtension: 'js' }
   };
 
   var ngPackageNames = [
@@ -37,10 +30,14 @@
     'http',
     'platform-browser',
     'platform-browser-dynamic',
-    'router',
-    'router-deprecated',
-    'upgrade',
+    'router'
   ];
+
+  // Add map entries for each angular package
+  // only because we're pinning the version with `ngVer`.
+  ngPackageNames.forEach(function(pkgName) {
+    map['@angular/'+pkgName] = 'https://npmcdn.com/@angular/' + pkgName + '@2.0.0-rc.5';
+  });
 
   // Individual files (~300 requests):
   function packIndex(pkgName) {
