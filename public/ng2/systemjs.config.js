@@ -4,21 +4,38 @@
  */
 (function(global) {
 
+  var usePathType = 'cdn'; // cdn, local
+
+  var vendorPaths = {
+    cdn : {
+      '@angular'        : 'https://npmcdn.com/@angular',
+      '@angular/router' : 'https://npmcdn.com/@angular/router@3.0.0-rc.1',
+      '@angular/forms'  : 'https://npmcdn.com/@angular/forms@0.3.0',
+      'rxjs'            : 'https://npmcdn.com/rxjs@5.0.0-beta.6'
+    },
+    local : {
+      '@angular'        : 'ng2/vendor/@angular',
+      '@angular/router' : 'ng2/vendor/@angular/router',
+      '@angular/forms'  : 'ng2/vendor/@angular/forms',
+      'rxjs'            : 'ng2/vendor/rxjs'
+    }
+  };
+
   // map tells the System loader where to look for things
   var map = {
     'app' : 'ng2/app',
 
-    '@angular':                   'https://npmcdn.com/@angular', // sufficient if we didn't pin the version
-    '@angular/router':            'https://npmcdn.com/@angular/router@3.0.0-rc.1',
-    '@angular/forms':             'https://npmcdn.com/@angular/forms@0.3.0',
-    'rxjs':                       'https://npmcdn.com/rxjs@5.0.0-beta.6',
-    'ts':                         'https://npmcdn.com/plugin-typescript@4.0.10/lib/plugin.js',
-    'typescript':                 'https://npmcdn.com/typescript@1.9.0-dev.20160409/lib/typescript.js'
+    '@angular'                   : vendorPaths[usePathType]['@angular'],
+    '@angular/forms'             : vendorPaths[usePathType]['@angular/forms'],
+    '@angular/router'            : vendorPaths[usePathType]['@angular/router'],
+    'rxjs'                       : vendorPaths[usePathType]['rxjs']
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'app'                         : { main: 'main.js',  defaultExtension: 'js' },
+    '@angular/forms'              : { main: 'index.js', defaultExtension: 'js' },
+    '@angular/router'             : { main: 'index.js', defaultExtension: 'js' },
     'rxjs'                        : { defaultExtension: 'js' }
   };
 
@@ -26,17 +43,18 @@
     'common',
     'compiler',
     'core',
-    'forms',
     'http',
     'platform-browser',
-    'platform-browser-dynamic',
+    'platform-browser-dynamic'
   ];
 
   // Add map entries for each angular package
   // only because we're pinning the version with `ngVer`.
-  ngPackageNames.forEach(function(pkgName) {
-    map['@angular/'+pkgName] = 'https://npmcdn.com/@angular/' + pkgName + '@2.0.0-rc.5';
-  });
+  if (usePathType == 'cdn') {
+      ngPackageNames.forEach(function(pkgName) {
+        map['@angular/'+pkgName] = vendorPaths[usePathType]['@angular'] + '/' + pkgName + '@2.0.0-rc.5';
+      });
+  }
 
   // Individual files (~300 requests):
   function packIndex(pkgName) {
