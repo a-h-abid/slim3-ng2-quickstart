@@ -8,10 +8,10 @@
 
   var vendorPaths = {
     cdn : {
-      '@angular'        : 'https://npmcdn.com/@angular',
-      '@angular/router' : 'https://npmcdn.com/@angular/router@3.0.0-rc.1',
-      '@angular/forms'  : 'https://npmcdn.com/@angular/forms@0.3.0',
-      'rxjs'            : 'https://npmcdn.com/rxjs@5.0.0-beta.6'
+      '@angular'        : 'https://unpkg.com/@angular',
+      '@angular/router' : 'https://unpkg.com/@angular/router@3.0.0-rc.1',
+      '@angular/forms'  : 'https://unpkg.com/@angular/forms@0.3.0',
+      'rxjs'            : 'https://unpkg.com/rxjs@5.0.0-beta.6'
     },
     local : {
       '@angular'        : 'ng2/vendor/@angular',
